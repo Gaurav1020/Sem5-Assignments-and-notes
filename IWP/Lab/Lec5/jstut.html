@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">Gaurav Kumar Singh</h1>
+    <button id="name" onclick="names()"> Name </button>
+    <button id="regno" onclick="regno()">Registration Number</button>
+    <button id="course" onclick="course()"> Course</button>
+    <script>
+        let texth1 = document.querySelector("#text");
+        texth1.addEventListener("click", function(){
+            document.getElementById("text").innerHTML="text";
+        })
+        function regno(){
+            document.getElementById("text").innerHTML="19BCE2119";
+            document.getElementById("text").style.color="blue";
+        }
+        function course(){
+            document.getElementById("text").innerHTML="Internet and Web Programming";
+            document.getElementById("text").style.color="black";
+        }
+        function names(){
+            document.getElementById("text").innerHTML="Gaurav Kumar Singh";
+        }
+    </script>
+</body>
+</html>

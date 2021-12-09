@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            margin: 5%;
+            font-family: "Trebuchet MS", Arial,
+                Helvetica, sans-serif;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        td {
+            padding: 10px;
+            padding-bottom: 12px;
+            text-align: left;
+            color: black;
+        }
+
+        th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f2a0e9;
+            color: white;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                details = [{
+                    "Student": $("#Student").val(),
+                    "student_name": $("#student_name").val(),
+                    "P_NAME": {
+                        "Mname": $("#Mname").val(),
+                        "Pname": $("#Pname").val(),
+                    },
+                    "dob": {
+                        "date": $("#date").val(),
+                        "month": $("#month").val(),
+                        "year": $("#year").val(),
+                    },
+                    "blood": $("#blood").val(),
+                    "email": $("#email").val(),
+                    "phone": {
+                        "m": $("#m").val(),
+                        "l": $("#l").val(),
+                    },
+                    "address": {
+                        "dno": $("#dno").val(),
+                        "street": $("#street").val(),
+                        "place": $("#place").val(),
+                        "pin": $("#pin").val(),
+                        "country": $("#country").val(),
+                    },
+                    "degree": $("#degree").val(),
+                }];
+                var tbl = $("<table/>").attr("id", "mytable");
+                var tblr1 = "<thead><tr><th>ID</th><th>Student name < /th><th>Parents Name</th > < th > DOB < /th><th> Blood Group </th > < th >Email < /th><th> Phone </th > < th > Address < /th><th> Degree </th > </tr> </thead > ";
+                $("#div1").append(tbl);
+                $("#mytable").append(tblr1);
+                for (var i = 0; i <
+                    details.length; i++) {
+                    var tr = "<tr>";
+                    var td = "<td>" + details[i]["Student"] +
+                        "</td>";
+                    var td1 = "<td>" + details[i]["student_name"] + "</td>";
+                    var td2 = "<td>" + "MOM: " + details[i]["P_NAME"]["Mname"] + " DAD: " +
+                        details[i]["P_NAME"]["Pname"] + "</td>";
+                    var td3 = "<td>" + details[i]["dob"]["date"] + "-" + details[i]["dob"]["month"] +
+                        "-" +
+                        details[i]["dob"]["year"] + "</td>";
+                    var td4 = "<td>" + details[i]["blood"] + "</td>";
+                    var td5 = "<td>" + details[i]["email"] + "</td>";
+                    var td6 = "<td>" + details[i]["phone"]["m"] + " " + details[i]["phone"]["l"] +
+                        "</td>";
+                    var td7 = "<td>" + details[i]["address"]["dno"] + " ," + details[i]["address"][
+                            "street"
+                        ] +
+                        ", " + details[i]["address"]["place"] + " ," + details[i]["address"]["pin"] +
+                        " ," +
+                        details[i]["address"]["country"] + "</td>";
+                    var td8 = "<td>" + details[i]["degree"] +
+                        "</td>";
+
+
+                    $("#mytable").append(tr + td + td1 + td2 + td3 + td4 + td5 + td6 + td7 + td8);
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>STUDENT DETAILS</h1>
+    <table style="border: 1px solid black;" id="detail_table">
+        <form id="form1" class="form1class" action="">
+
+            <tr>
+                <td><label for="student_name">Name: </label></td>
+                <td><input type="text" id="student_name" placeholder="Enter your name" required></td>
+
+            </tr>
+            <tr>
+                <td><label for="P_NAME">Parents name </label></td>
+                <td><input type="text" id="Mname" placeholder="Enter your Mothers name" required></td>
+                <td><input type="text" id="Pname" placeholder="Enter your Fathers name" required></td>
+            </tr>
+            <tr>
+                <td><label for="dob">Date of Birth: </label></td>
+                <td><input type="number" id="date" required placeholder="dd"></td>
+                <td><input type="number" id="month" required placeholder="mm"></td>
+                <td><input type="number" id="year" required placeholder="yyyy"></td>
+            </tr>
+            <tr>
+                <td><label for="blood">Blood group:</label></td>
+                <td><input type="text" id="blood" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone number:</label></td>
+                <td><input type="tel" id="m" placeholder=" Enter mobile" required></td>
+                <td><input type="tel" id="l" placeholder=" Enter landline" required></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td><input type="number" id="dno" placeholder="Enter door no" required></td>
+                <td><input type="text" id="street" placeholder="Enter street name" required></td>
+                <td><input type="text" id="place" placeholder="Enter place name" required></td>
+                <td><input type="number" id="pin" placeholder="Enter pin code" required></td>
+                <td><input type="text" id="country" placeholder="Enter country" required></td>
+            </tr>
+            <tr>
+                <td><label for="degree">Degree:</label></td>
+                <td><input type="text" id="degree" required></td>
+            </tr>
+            <tr style="align-items: center;">
+                <td colspan="8"><input type="button" value="Submit" id="submit" name="submitbutton"></td> </tr> </form>
+                        </table> <p id="display"></p>
+                    <div id="div1"></div>
+</body>
+
+</html>

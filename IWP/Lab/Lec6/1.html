@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+    <script src="1.js"></script>
+</head>
+<body>
+    <div class=personal>
+        <h1>Personal Details</h1>
+        <p>Name: Gaurav Kumar Singh</p>
+        <p>Registration Number: 19BCE2119</p>
+        <p>DOB: 13<sup>th</sup> September 2000</p>
+    </div>
+        
+    <div class="flex-s">
+        <div class=movie>
+            <h2>Favourite Movie</h2>
+            <p>Name: Avengers</p>
+            <p>Year of release: 2012</p>
+            <p>Production: Marvel Studios</p>
+        </div>
+        <div class=parental>
+            <h2>Parents Details</h2>
+            <p>Father's Name: M.K. Singh</p>
+            <p>Mother's Name: P. Singh</p>
+        </div>
+    </div>
+
+    <div class=netlinks>
+        <h3>Social Media</h3>
+        <div class="flex-s x">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+    <button onclick="RNG()">RNG</button>
+    <!-- <script>
+        var count=0;
+        const color=["aquamarine","grey","lightgreen","bisque"];
+        function RNG(){
+            //console.log("Hello");
+            count++;
+            document.querySelector(".personal").style.backgroundColor=color[count%4];
+            document.querySelector(".movie").style.backgroundColor=color[(count+1)%4];
+            document.querySelector(".parental").style.backgroundColor=color[(count+2)%4];
+            document.querySelector(".netlinks").style.backgroundColor=color[(count+3)%4];
+        }
+    </script> -->
+</body>
+</html>

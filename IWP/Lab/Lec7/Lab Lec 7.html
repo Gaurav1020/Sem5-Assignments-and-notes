@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <script>
+        var reg = "19BCE2119";
+        var re1 = /\d/g;
+        document.write(reg.match(re1)+"<br/>");
+        var re2 = /[A-Za-z]/g;
+        document.write(reg.match(re2)+"<br/>");
+        var re3 = /[0-9a-z]/gi;
+        document.write(reg.match(re3)+"<br/>");
+        var ere = /^[a-zA-Z0-9_]+@[a-zA-Z0-9-_]+[.\w]+[^\W]$/
+        var email = "ayush2021@vitstudent.ac.in";
+        var email1 = "ayush2021@scope.vitstudent.ac.in";
+        if(email.match(ere)){
+            document.write(email+" <b>is Valid</b>"+"<br/>");
+        }
+        else{
+            document.write(email+" <b>is Invalid</b>"+"<br/>");
+        }
+
+        if(email1.match(ere)){
+            document.write(email1+" <b>is Valid</b>"+"<br/>");
+        }
+        else{
+            document.write(email1+" <b>is Invalid</b>"+"<br/>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

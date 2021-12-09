@@ -1,0 +1,13 @@
+EXP1:- 
+	Packet Tracer Installation
+		https://www.youtube.com/watch?v=3mmGXT-n2tk
+	Using Packet tracer
+	2) Configuring LAN network
+	1) Configuring multi layered n/w using router
+        	https://www.youtube.com/watch?v=AlR-zK2VaMM
+		https://www.youtube.com/watch?v=qLZGVTn0zME
+	Introduction about Packet Tracer
+	Intro abt LAN confguration
+	Screenshot with timestamp
+	Into abt lAN with switch and Router
+	Screenshot with timestamp

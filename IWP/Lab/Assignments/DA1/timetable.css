@@ -1,0 +1,30 @@
+.nav{
+    margin-top:-10px;
+    background-color: rgb(40,116,166);
+    color:white;
+}
+.left-cols{
+    border: 1px solid #3c8dbc;
+    text-align: center; 
+    vertical-align: middle;
+    padding: 3px; 
+    width: 80px;
+}
+.greycol{
+    background-color: #e2e2e2;
+}
+.orange{
+    background-color:#f9efa4;
+}
+.takencell{
+    background-color:#CCFF33;
+}
+.timetheory{
+    background-color:#CCCCFF;
+}
+.timelab{
+    background-color:#99CCFF;
+}
+table{
+    margin:0 auto;
+}

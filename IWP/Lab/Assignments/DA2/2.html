@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            text-align:right
+        }
+    </style>
+</head>
+<body>
+    <h3 id=welcomebox>&nbsp</h3>
+    <form>
+        <table>
+            <tr>
+                <td class="a">Username:</td>
+                <td><input name=username id=username required></td>
+            </tr>
+            <tr>
+                <td class="a">Balance:</td>
+                <td><input type=number name=balance id=balance required></td>
+            </tr>
+            <tr>
+                <td class="a">Total Charges:</td>
+                <td><input type=number name=totalcharges id=totalcharges required></td>
+            </tr>
+            <tr>
+                <td class="a">Total Applied credits:</td>
+                <td><input type=number name=totalappliedcredits id=totalappliedcredits required></td>
+            </tr>
+            <tr>
+                <td class="a">Allowed Credits:</td>
+                <td><input type=number name=allowedcredits id=allowedcredits required></td>
+            </tr>
+            <tr><td class="a"><input type=reset></td><td class="a"><button type=button onClick="myfunction()">Submit</button></td></tr>
+        </table>
+    </form>
+    <div id=statusbox></div>
+    <script>
+        statusbox=document.getElementById('statusbox');
+        welcomebox=document.getElementById('welcomebox');
+        var myfunction =()=>{
+            var username = document.getElementById('username').value;
+            var balance = document.getElementById('balance').value;
+            var totalcharges = document.getElementById('totalcharges').value;
+            var totalappliedcredits = document.getElementById('totalappliedcredits').value;
+            var allowedcredits = document.getElementById('allowedcredits').value;
+            var allowance = parseFloat(balance) + parseFloat(totalcharges) - parseFloat(totalappliedcredits);
+            if(parseFloat(allowance) <= parseFloat(allowedcredits)){
+                statusbox.innerText="Credit Limit Not Exceeded";
+                statusbox.style.color="green";
+            }
+            else{
+                statusbox.innerText="Credit Limit Exceeded";
+                statusbox.style.color="red";
+            }
+            welcomebox.innerText="Welcome "+username
+        }
+    </script>
+</body>
+</html>

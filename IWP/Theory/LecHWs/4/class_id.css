@@ -1,0 +1,14 @@
+p{
+    color:beige;
+    background-color: brown;
+}
+.list{
+    color:green;
+}
+#xul{
+    color:red;
+}
+.cul, .oul{
+    color:magenta;
+
+}

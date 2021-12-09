@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Registeration</title>
+<script type="text/javascript" src="./3.js"></script>
+</head>
+<body>
+    <center>
+    <form>
+    <table>
+    <tr>
+        <td>Student Name:</td><td><input name="name" id="name" type="text" maxlength="30"></td>
+    </tr>
+    <tr>
+        <td>Register Number:</td><td><input id="regno" type="text"></td>
+    </tr>
+    <tr>
+        <td>Date of Birth:</td><td><input id="dob" type="text"></td>
+    </tr>
+    <tr>
+        <td>Program:</td><td><input id="prog" type="text"></td>
+    </tr>
+    <tr>
+        <td>E-Mail ID:</td><td><input id="email" type="text"></td>
+    </tr>
+    <tr>
+        <td>Temporary Address:</td><td><input id="tempadd" type="text"></td>
+    </tr>
+    <tr>
+        <td>Permanent Address:</td><td><input id="permadd" type="text"></td>
+        <td><input id="check" type="checkbox" onclick="disable();">Same as temporary address</td>
+    </tr>
+    <tr>
+        <td>Phone Nummber:</td><td><input id="phoneno" type="text" maxlength="10"></td>
+    </tr>
+    <tr><td colspan="2"><input type="submit" onclick="validate();"></td></tr>
+    </table>
+    </form>
+    </center>
+</body>
+</html>

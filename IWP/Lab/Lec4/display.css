@@ -1,0 +1,41 @@
+div div{
+    width:50px;
+    height:50px;
+    text-align:center;
+    vertical-align:middle;
+}
+div div:nth-child(1){
+    background-color:blue;
+}
+div div:nth-child(2){
+    background-color:red;
+}
+div div:nth-child(3){
+    background-color:green;
+}
+
+.a div{
+    display: inline-block;
+}
+.b{
+    display:flex;
+    flex-direction:row;
+}
+
+.c{
+    position:relative;
+}
+
+.c div:nth-child(3){
+    position:relative;
+    left:50px;
+}
+.c div:nth-child(2){
+    position:absolute;
+    left:100px;
+    top:0px;
+}
+.c div:nth-child(1){
+    position:sticky;
+    top:0
+}

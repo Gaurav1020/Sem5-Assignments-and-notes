@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<body>
+
+<h2>Validation</h2>
+
+<form ng-app="myApp" ng-controller="validateCtrl" 
+name="myForm" novalidate>
+
+<p>Your Name (required)<br>
+<input type="text" name="user" ng-model="user" required>
+<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Name is required.</span>
+</span>
+</p>
+
+<p>Your Email (required)<br>
+<input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span>
+</p>
+
+<p>Your Phone <br>
+    <input type="text" name="phone" ng-model="phone" ng-pattern="/^[0-9]{10}$/" required>
+    <span style="color:red" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">
+    <span ng-show="myForm.phone.$error.required">Phone number is required.</span>
+    <span ng-show="myForm.phone.$error.pattern">Phone number is invalid.</span>
+    </span>
+</p>
+
+<p>Website<br>
+    <input type="text" name="url" ng-model="url" ng-pattern="/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/" required>
+    <span style="color:red" ng-show="myForm.url.$dirty && myForm.url.$invalid">
+    <span ng-show="myForm.url.$error.required">Website is required.</span>
+    <span ng-show="myForm.url.$error.pattern">Website is invalid.</span>
+    </span>
+</p>
+
+<p>Credit Card<br>
+    <input type="text" name="card" ng-model="card" ng-pattern="/^[0-9]{18}$/" required>
+    <span style="color:red" ng-show="myForm.card.$dirty && myForm.card.$invalid">
+    <span ng-show="myForm.card.$error.required">Credit card number is required.</span>
+    <span ng-show="myForm.card.$error.pattern">Credit card number is invalid.</span>
+    </span>
+</p>
+
+<p>Date<br>
+    <input type="text" name="date" ng-model="date" ng-pattern="/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/" required>
+    <span style="color:red" ng-show="myForm.date.$dirty && myForm.date.$invalid">
+    <span ng-show="myForm.date.$error.required">Date is required.</span>
+    <span ng-show="myForm.date.$error.pattern">Date is invalid.</span>
+    </span>
+</p>
+
+<p>
+<input type="submit"
+ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid || myForm.phone.$dirty && myForm.phone.$invalid || myForm.url.$dirty && myForm.url.$invalid
+|| myForm.card.$dirty && myForm.card.$invalid || myForm.date.$dirty && myForm.date.$invalid">
+</p>
+
+</form>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+    $scope.user = "Gaurav"
+    $scope.email = "gauravkumar.singh2019@vitstudent.ac.in"
+    $scope.phone = "9664395951"
+    $scope.url = "";
+    $scope.card =  "111111111111111111";
+    $scope.date = ""
+});
+</script>
+
+</body>
+</html>

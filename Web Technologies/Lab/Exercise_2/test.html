@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="GET" id=form>
+        <input type=text name=regno id=regno>
+    </form>
+    <button onclick="clicktrig()">SUBMIT</button>
+    <div id=captcha>
+        Captcha: 
+    </div>
+    <div id=output>
+
+    </div>
+
+    <script>
+        
+        function jumble(a) {
+            var n = a.length;
+            a = a.split("");
+            for (var i = n - 1; i > (n / 2); i--) {
+                var j = Math.floor((n / 2) - (n - i));
+                var tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+                //console.log(i,j,"\n")
+            }
+            return a.join("");
+        }
+        var regno = "19BCE2134";//Your registration number here
+        var str = jumble(regno)
+        let symbols = new Array("#", "-", "_", "+", "=", "[", "]", "{", "}", ":", ";", ",", ">", ",", ".", "/", "?", "|");
+        var n = symbols.length;
+        str += symbols[Math.floor(Math.random() * (n))];
+        console.log("Captcha: ", str)
+        document.getElementById('captcha').innerText+=str;
+
+        function verify(regno, captcha) {
+            var n = regno.length;
+            var m = captcha.length;
+            captcha = captcha.substring(0, m - 1);
+            console.log(captcha);
+            if (jumble(regno) == captcha) {
+                return "Matched"
+            }
+            else {
+                return "Not-Matched"
+            }
+        }
+        var input;
+        function clicktrig(){
+            var fd=new FormData(document.getElementById('form'));
+            input= fd.get('regno');
+            console.log(input);
+            document.getElementById('output').innerText=verify(input, str);
+        }
+    </script>
+</body>
+
+</html>

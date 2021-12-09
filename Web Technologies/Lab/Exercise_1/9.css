@@ -1,0 +1,51 @@
+h1{
+    text-align:center;
+}
+p{
+    margin: -2px 0px;
+}
+.flex-container{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+.flex-container div{
+    margin-top:40px;
+    background-color:black;
+    color:white;
+    padding: 0px 20px;
+    margin-right: 3px;
+}
+.inline-blocked{
+    display:inline-block;
+    
+    
+}
+.walleimg img{
+    
+    height:150px;
+    width:100px;
+}
+.score-text{
+    font-size:30px;
+    padding:20px;
+    background-color:green;
+    margin:5px;
+    margin-bottom: auto;
+    vertical-align:top;
+    color:white;
+    
+}
+.par{
+    margin-top: 20px;
+    vertical-align:top;
+}
+.score-text p{
+    display:table-cell;
+    vertical-align:middle;
+}
+.score-info{
+    margin-left:5px;
+    width:50%;
+    margin-top:25px;
+}

@@ -1,0 +1,25 @@
+1st Abstract -----------------------------------------------
+2nd intro --------------------------------------------------
+3rd literature survey and related work (5 papers 3 columns title methodology disadvantage)
+4th Proposed Methodology (Architectural flow diagram) ********************
+5th Project Scheduling (process Model) ---------------------
+6th Risk Analysis (identified risks, affects of risk, risk solution) ----------------------
+7th Functional and non functional requirements -------------
+8th Challenges faced ---------------------------------------
+9th Gantt Chart --------------------------------------------
+10th References 
+
+
+
+
+1st title slide
+2nd Abstract font and way of write should only have bulletin points and write necessary contain and speak more
+3. don't make it beyond 15 slides
+4. Introduction
+5. Literature survey or related works take 5 paper 3 columns 1st paper name 2nd methodology 3rd disadvantage of existing paper
+6. Your own proposed methodology with architecture diagram and any flowchart
+7. Process model and Scheduling
+8. Risk analysis table format effects of risks types and backup solution
+9. Functional and Non-functional Requirement followed by challenges faced during making project
+10. Gantt Chart
+and all the references

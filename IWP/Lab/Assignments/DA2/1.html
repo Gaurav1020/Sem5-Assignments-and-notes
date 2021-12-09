@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inp {
+            font-weight: bold;
+        }
+        .xinp{
+            margin-left:10px;
+            width:200px;
+        }
+        #dropdown{
+            border:1px solid black;
+            background-color:rgb(228, 250, 255); 
+            width:206px; 
+            height:22px;
+            display:none;
+        }
+        #dropdown:hover{
+            background-color:rgb(117, 193, 255);
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>Password:</div>
+        <input class=xinp type=text id=inp autocomplete="off"><div id=len style="display:inline-block"></div>
+        <div class=xinp id=dropdown></div>
+    </div>
+
+    <script>
+        
+        var generatePassword = () => {
+            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var retval = "";
+            var len = Math.floor(Math.random() * (8) + 10);
+            for (var i = 0; i < len; i++) {
+                retval += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return retval;
+        }
+
+        var checkStrength = (val) => {
+            if (val.length < 8) {
+                return 0;
+            }
+            var pattern = /^[a-z]*$|^[0-9]*$/; //lowercase characters OR numbers only
+            if (pattern.test(val)) {
+                return 1;
+            }
+            pattern = /^[a-z0-9]*$/; //lowercase characters AND numbers
+            if (pattern.test(val)) {
+                return 2;
+            }
+            pattern = /^[a-zA-Z0-9]*$/; //lowercase and uppercase characters and numbers
+            if (pattern.test(val)) {
+                return 3;
+            }
+            pattern = /^[a-zA-Z0-9-_~+=;:'",<.>/?`!@#$%^&*()]*$/; //lowercase and uppercase characters, symbols and numbers
+            if (pattern.test(val)) {
+                return 4;
+            }
+            return 5;
+        }
+
+        var randomPassword = generatePassword();
+        while (checkStrength(randomPassword) != 3) {
+            randomPassword = generatePassword();
+        }
+        var dropdown=document.getElementById("dropdown")
+        var inp = document.getElementById('inp');
+        var len = document.getElementById('len');
+
+        inp.addEventListener("mouseover",()=>{
+            len.innerText=inp.value.length;
+            len.style.display="inline-block";
+        } )
+        inp.addEventListener("mouseout",()=>{
+            len.innerText=inp.value.length;
+            len.style.display="none";
+        } )
+
+        dropdown.addEventListener('click', ()=>{
+            inp.value=dropdown.innerText;
+            dropdown.style.display = "none";
+            inp.style.color = "blue";
+        })
+
+        inp.addEventListener('click', () => {
+            if(checkStrength(inp.value)<3){
+                dropdown.style.display = "block";
+                dropdown.innerText = randomPassword;
+            }
+        })
+
+        inp.addEventListener('blur', () => {
+            setTimeout(function(){
+                dropdown.style.display = 'none';
+            },700);
+        })
+
+        inp.addEventListener('input', () => {
+            document.getElementById("dropdown").innerText = randomPassword;
+            var val = inp.value;
+            //console.log(val);
+            var strength = checkStrength(val);
+            // 0: length short(<8)
+            // 1: weak
+            // 2: moderate
+            // 3: strong
+            // 4: unbreakable
+            // 5: undefined
+            //console.log(randomPassword);
+            switch (strength) {
+                case 0:
+                    inp.style.color = "black";
+                    dropdown.style.display = "block";
+                    dropdown.innerText = randomPassword;
+                    len.innerText=inp.value.length;
+                    break;
+                case 1:
+                    inp.style.color = "red";
+                    dropdown.style.display = "block";
+                    dropdown.innerText = randomPassword;
+                    len.innerText=inp.value.length;
+                    break;
+                case 2:
+                    inp.style.color = "orange";
+                    dropdown.style.display = "block";
+                    dropdown.innerText = randomPassword;
+                    len.innerText=inp.value.length;
+                    break;
+                case 3:
+                    inp.style.color = "blue";
+                    dropdown.style.display = "none";
+                    len.innerText=inp.value.length;
+                    break;
+                case 4:
+                    inp.style.color = "green";
+                    dropdown.style.display = "none";
+                    len.innerText=inp.value.length;
+                    break;
+                case 5:
+                    inp.style.color = "black";
+                    dropdown.style.display = "block";
+                    dropdown.innerText = randomPassword;
+                    len.innerText=inp.value.length;
+                    break;
+            }
+        })
+
+    </script>
+</body>
+
+</html>

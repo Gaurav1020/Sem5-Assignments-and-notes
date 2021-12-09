@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./10.js" type="text/javascript"></script>
+</head>
+<body onload="loadjson()">
+    <form>
+        User: <input type="text" name="mname" size=30 id="name"/> <br/>
+        <b><h2><label id="heading" ></label></h2></b>
+        <table>
+        <tr>
+        <td>
+        <input type="checkbox" name="option1" checked="checked"/>
+        <label id="chk1">Four 100 watt bulbs for Rs. 20.39 </label>
+        </td>
+        <td>
+        <input type="text" id="q1" name="VAL1" size=2 />
+        </td>
+        </tr>
+        <tr><td>
+        <input type="checkbox" name="option2" />
+        <label id="chk2">Eight 100watt bulbs for Rs 40.20 </label></td>
+        <td>
+        <input type="text" id="q2" name="VAL2" size=2/>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <input type="checkbox" name="option3" />
+        <label id="chk3">Four 100watt long life bulbs for Rs. 30.95 </label>
+        </td>
+        <td>
+        <input type="text" id="q3" name="VAL3" size=2/>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <input type="checkbox" name="option4" />
+        <label id="chk4">Eight 100watt long life bulbs for Rs 70.49 </label><br/>
+        </td>
+        <td>
+        <input type="text" id="q4" name="VAL4" size=2/>
+        </td> 
+        </tr>
+        </table>
+        <input type="radio" id="r1" name="paymode" value="visa" checked="checked" /> VISA<br/>
+        <input type="radio" id="r3" name="paymode" value="mcard"/> MASTER CARD <br/>
+        <input type="radio" id="r2" name="paymode" value="discover"/> DISCOVER <br/>
+        <input type="button" id="bt" value="submit" onclick="info()"/>
+        <input type="reset" value="Reset Order" />
+        <p id="result"></p>
+        </form>
+        
+</body>
+</html>

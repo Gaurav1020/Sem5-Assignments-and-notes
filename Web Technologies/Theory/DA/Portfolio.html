@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aside {
+            height: 100%;
+            width: 20%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(18, 18, 29);
+            overflow-x: hidden;
+            overflow-y: hidden;
+            padding-top: 20px;
+        }
+
+        .aside a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 20%;
+            font-size: 28px;
+            padding: 0px 10px;
+        }
+
+        .dp {
+            width: 50%;
+            border-radius: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 5px solid grey;
+        }
+
+        .aside-name {
+            color: #f1f1f1;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+        .aside-socials {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 0px 30px;
+        }
+
+        .soc-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .soc-img:hover {
+            transform: scale(1.25);
+            transition: transform .2s;
+            transition: filter .2s;
+            filter: invert(100%) !important;
+            -webkit-filter: invert(100%) !important;
+        }
+
+        .txt-grey {
+            color: rgb(201, 201, 201);
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline;
+
+        }
+
+        .aside-td {
+            height: 80px;
+            text-align: left;
+            vertical-align: center;
+        }
+
+        .txt-grey:hover {
+            color: white;
+        }
+
+        .heading {
+            color: rgb(24, 60, 61);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .ntext {
+            font-size: 20px;
+        }
+
+        .about-flex {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .about-img {
+            width: 270px;
+            border-radius: 10px;
+            border: 4px solid rgb(78, 78, 78);
+        }
+
+        .about-name {
+            color: rgb(2, 18, 68);
+            display: inline;
+            margin-top: -10px;
+        }
+
+        #about-table {
+            margin-left: 20px;
+        }
+
+        .tab-space {
+            padding-left: 40px;
+        }
+
+        .hlink-about {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .about-desc {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        .resume-ed-head {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+            padding-left: 80px;
+        }
+
+        .resume-ed-desc {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding-left: 160px;
+        }
+
+        .resume-ac-desc {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding-left: 80px;
+            font-weight: bold;
+            height: 40px;
+        }
+
+        .vertical {
+            border-left: 5px solid black;
+            position: absolute;
+            margin-left: 40px;
+        }
+
+        div.scrollmenu button {
+            display: inline-block;
+            color: rgb(34, 34, 34);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            border:none;
+            width:300px;
+            height:70px;
+            display:block;
+            border-right: 2px solid black;
+            border-left : 2px solid black
+        }
+        .cacv{
+            margin-bottom: 10px;
+        }
+        
+        div.scrollmenu button:hover {
+            background-color: rgb(199, 199, 199);
+        }
+        .Embed-src{
+            display: flex;
+            flex-direction: row;
+        }
+        .embed-loc{
+            margin: 0px 20px;
+            width:100%; 
+            height:800px;
+        }
+        .projects-desc{
+            width:100%
+        }
+        .projects-desc tr td{
+            width:50%;
+            text-align: center;
+            height:90px;
+            border-radius:10px;
+            border:3px solid black;
+            font-size: 25px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .projects-desc tr td:hover{
+            transform: scale(1.02);
+            transition:transform .2s;
+            
+        }
+        .bg-blue{
+            background-color: rgba(174, 174, 255, 0.7);
+        }
+        .bg-blue:hover{
+            background-color: rgba(174, 174, 255, 1);
+        }
+        .bg-lblue{
+            background-color: rgba(173, 216, 230,0.7);
+        }
+        .bg-lblue:hover{
+            background-color: rgba(173, 216, 230,1);
+        }
+        .flex-img{
+            width:40px;
+            height:40px;
+        }
+        .tab-flex{
+            width:35%;
+            height:50px;
+            text-align:right;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+    <!-- SIDENAV -->
+    <div class=aside>
+        <img src="assets/profile_picture.jpg" class="dp">
+        <div class=aside-name>
+            <h2>Gaurav Kumar Singh</h2>
+        </div>
+        <div class=aside-socials>
+            <div class="socials"><a href="mailto:gauravkumarsingh1020@gmail.com" target="_blank" class="gmail"><img
+                        class=soc-img src="assets/gmail.jpg"></a></div>
+            <div class="socials"><a href="https://github.com/Gaurav1020" target="_blank"><img class="soc-img github"
+                        src="assets/github.jpg"></a></div>
+            <div class="socials"><a href="https://www.linkedin.com/in/gaurav-kumar-singh-8553b221a/" target="_blank"
+                    class="linkedin"><img class=soc-img src="assets/linkedin.jpeg"></a></div>
+        </div>
+        <table class=aside-table text-align=center>
+            <tr>
+                <td class=tab-flex><a href="#about"><img class=flex-img src="assets/about-icon.png"></a></td>
+                <td class="aside-td"><a href="#about">
+                        <h4 class="txt-grey">About</h4>
+                    </a></td>
+            </tr>
+            <tr>
+                <td class=tab-flex><a href="#resume"><img class=flex-img src="assets/Resume.png"></a></td>
+                <td class="aside-td"><a href="#resume">
+                        <h4 class="txt-grey">Resume</h4>
+                    </a></td>
+            </tr>
+            <tr>
+                <td class=tab-flex><a href="#projects"><img class=flex-img src="assets/Projects.png"></a></td>
+                <td class="aside-td"><a href="#projects">
+                        <h4 class="txt-grey">Projects</h4>
+                    </a></td>
+            </tr>
+            <tr>
+                <td class=tab-flex><a href="#contact"><img class=flex-img src="assets/Contacts.png"></a></td>
+                <td class="aside-td"><a href="#contact">
+                        <h4 class="txt-grey">Contact</h4>
+                    </a></td>
+            </tr>
+        </table>
+    </div>
+    <!--  -->
+    <div class=main>
+        <!-- ABOUT -->
+        <div id=about>
+            <h2 class="heading">About</h2>
+            <hr align=left size=5px color="dimgrey" style="width:120px; margin-top:-25px;">
+            <p class="ntext">I'm 3rd year Computer Science Engineering, B.Tech. undergraduate student at Vellore
+                Institute of Technology, Vellore.</p>
+            <div class=about-flex>
+                <div>
+                    <img src="assets/About.jpg" class=about-img>
+                </div>
+                <div>
+                    <table id=about-table>
+                        <tr>
+                            <td colspan=2>
+                                <h4 class="aside-name about-name">Gaurav Kumar Singh</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="ntext"><strong>E-mail:</strong> <a class=hlink-about href="mailto:gauravkumarsingh1020@gmail.com" target="_blank" class="gmail">gauravkumarsingh1020@gmail.com</a></p>
+                            </td>
+                            <td>
+                                <p class="ntext tab-space"><strong>Phone:</strong> +91 9664395951</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="ntext"><strong>Degree:</strong> Bachelor of Technology</p>
+                            </td>
+                            <td>
+                                <p class="ntext tab-space"><strong>Institute:</strong> Vellore Institute of Technology,
+                                    Vellore</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="ntext"><strong>Batch:</strong> 2023</p>
+                            </td>
+                            <td>
+                                <p class="ntext tab-space"><strong>GitHub:</strong> <a class="hlink-about"
+                                        href="https://github.com/Gaurav1020">Gaurav1020</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ntext about-desc" colspan=2>Tech enthusiast, and computer programmer currently
+                                pursuing B.Tech. from Vellore Institute of Technology, Vellore. </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <!-- RESUME -->
+        <div id=resume>
+            <h2 class="heading">Resume</h2>
+            <hr align=left size=5px color="dimgrey" style="width:155px; margin-top:-25px;">
+            <h3 class="heading">Education</h3>
+            <div class="vertical education-vertical"></div>
+            <div id=education-tb>
+                <div>
+                    <p class=resume-ed-head><strong>VELLORE INSTITUTE OF TECHNOLOGY, VELLORE</strong></p>
+                    <p class=resume-ed-desc>Bachelor of Technology in Computer Science Engineering</p>
+                    <p class=resume-ed-desc>CGPA: 8.32 (Till 2021)</p>
+                </div>
+                <div>
+                    <p class=resume-ed-head><strong>SHIV JYOTI CONVENT SCHOOL, LADPURA, KOTA</strong></p>
+                    <p class=resume-ed-desc>12th CBSE: 78.8% (2018)</p>
+                </div>
+                <div>
+                    <p class=resume-ed-head><strong>ST. PAUL’S SENIOR SECONDARY SCHOOL, BEAWAR</strong></p>
+                    <p class=resume-ed-desc>10th CBSE: 10 CGPA (2016)
+                    </p>
+                </div>
+            </div>
+            <div id=achievements-tb>
+                <h3 class="heading">Achievements</h3>
+                <table>
+                    <tr>
+                        <td class=resume-ac-desc>JEE Mains 2019: 96.025</td>
+                        <td class=resume-ac-desc>JEE Advance 2019: 15071</td>
+                    </tr>
+                    <tr>
+                        <td class=resume-ac-desc>Facebook Hacker Cup 2021 Round-2 Rank: 2826</td>
+                        <td class=resume-ac-desc>D2C Recruitables Score: 245/400</td>
+                    </tr>
+                    <tr>
+                        <td class=resume-ac-desc>Chamber of Codes (DTU) 2021 Rank: 7</td>
+                        <td class=resume-ac-desc>CodeDrift 2.0 August 2021 Rank:56, InterviewBit</td>
+                    </tr>
+                    <tr>
+                        <td class=resume-ac-desc>Newton's Grand Contest 2021 Rank: 2225</td>
+                        <td class=resume-ac-desc>InterviewBit Score: 28000+</td>
+                    </tr>
+                </table>
+            </div>
+            <div id=skills-tb>
+                <h3 class="heading">Skills</h3>
+                <table>
+                    <tr>
+                        <td class=resume-ac-desc>C/C++</td>
+                        <td class=resume-ac-desc>Python</td>
+                        <td class=resume-ac-desc>HTML</td>
+                        <td class=resume-ac-desc>CSS</td>
+                        <td class=resume-ac-desc>JavaScript</td>
+                        <td class=resume-ac-desc>Node.js</td>
+                    </tr>
+                    <tr>
+                        <td class=resume-ac-desc>Express.js</td>
+                        <td class=resume-ac-desc>MongoDB</td>
+                        <td class=resume-ac-desc>Mongoose.js</td>
+                        <td class=resume-ac-desc>MySQL</td>
+                        <td class=resume-ac-desc>Flask</td>
+                    </tr>
+                </table>
+            </div>
+            <div id=Embed-src ng-app=myCertificates ng-cloak ng-controller="myCtrl">
+                <h3 class="heading cacv">Certifications and CV</h3>
+                <div class=Embed-src>
+                    <div class="scrollmenu">
+                        <button class="certificate-selection" ng-repeat="x in certificates" ng-click="updateSource(x)">{{x}}</button>
+                        <!-- <button class="cacv-button-odd">Resume</button>
+                        <button >Coding Ninjas Front End <br> Web Development</button>
+                        <button class="cacv-button-odd" >Coding Ninjas Back End <br> Web Development</button> -->
+                    </div>
+                    <div class=embed-loc>
+                        <embed id=Docx src="assets/Resume.pdf#toolbar=0" style="width:100%; height:700px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PROJECTS -->
+        <div id=projects>
+            <h2 class="heading">Projects</h2>
+            <hr align=left size=5px color="dimgrey" style="width:160px; margin-top:-25px;">
+            <p class=resume-ac-desc style="margin-left:-75px">Link of major projects I have been a part of:</p>
+            <table class=projects-desc>
+                <tr>
+                    <td class=bg-blue id=ptpbr><strong>Peer-to-Peer Book Rental</strong></td>
+                    <td class=bg-lblue id=db><strong>Discord Bot</strong></td>
+                </tr>
+                <tr>
+                    <td class=bg-lblue id=sra><strong>Smartphone Recommendation<br> Application</strong></td>
+                    <td class=bg-blue id=cidbms><strong>Cement Industry Database<br> Management System</strong></td>
+                </tr>
+                <tr>
+                    <td class=bg-blue id=moreprojects><strong>And more...</strong><br><p style="display:inline; font-size:20px;">Mini Projects with Source Code on GitHub</p></td>
+                </tr>
+            </table>
+        </div>
+        <!-- CONTACTS -->
+        <div id=contact>
+            <h2 class="heading">Contact</h2>
+            <hr align=left size=5px color="dimgrey" style="width:150px; margin-top:-25px;">
+            <table>
+                <tr>
+                    <td style="text-align:right;"><strong>Email:</strong></td>
+                    <td> &nbsp&nbsp<a href="mailto:gauravkumarsingh1020@gmail.com" target="_blank" class="hlink-about">gauravkumarsingh1020@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;"><strong>Call:</strong></td>
+                    <td>&nbsp&nbsp+91 9664395951</td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;"><strong>Instagram:</strong></td>
+                    <td>&nbsp&nbsp<a class="hlink-about" href="https://www.instagram.com/g_rave1020/">@g_rave1020</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(() => {
+            //ASIDE TD WIDTH DYNAMIC
+            var aside_td = $(".aside-td");
+            var aside_td_width = $(".aside").css("width");
+            aside_td.css("width", aside_td_width);
+
+            //vertical line size
+            var vertical = $(".education-vertical");
+            var vertical_height = $("#education-tb").css("height");
+            vertical.css("height", vertical_height);
+
+            //Odd Button STyle
+            $(".certificate-selection").even().css("background-color","rgb(221, 221, 221)");
+            $(".certificate-selection").mouseenter(function() {
+                $(this).css("background", "rgb(199, 199, 199)");
+            }).mouseleave(function() {
+                $(".certificate-selection").even().css("background-color","rgb(221, 221, 221)");
+                $(".certificate-selection").odd().css("background-color","rgb(239,239,239)");
+            });
+
+            //Projects Hyperlinks
+            $("#ptpbr").on("click",()=>{
+                window.open("https://github.com/Gaurav1020/BookLook","_blank");
+            })
+            $("#ptpbr").on("mouseover",()=>{
+                $("#ptpbr").css('cursor','pointer');
+            })
+
+            $("#db").on("click",()=>{
+                window.open("https://github.com/Gaurav1020/NTRTNMNT-BOT","_blank");
+            })
+            $("#db").on("mouseover",()=>{
+                $("#db").css('cursor','pointer');
+            })
+            $("#sra").on("click",()=>{
+                window.open("https://github.com/Gaurav1020/Smartphone_Recommendation","_blank");
+            })
+            $("#sra").on("mouseover",()=>{
+                $("#sra").css('cursor','pointer');
+            })
+            $("#cidbms").on("click",()=>{
+                window.open("https://github.com/Gaurav1020/Cement-Industry-DatabaseManagementSystem/tree/main/DBMS","_blank");
+            })
+            $("#cidbms").on("mouseover",()=>{
+                $("#cidbms").css('cursor','pointer');
+            })
+            $("#moreprojects").on("click",()=>{
+                window.open("https://github.com/Gaurav1020","_blank");
+            })
+            $("#moreprojects").on("mouseover",()=>{
+                $("#moreprojects").css('cursor','pointer');
+            })
+        })
+        $(window).resize(() => {
+            var aside_td = $(".aside-td");
+            var aside_td_width = $(".aside").css("width");
+            aside_td.css("width", aside_td_width);
+
+            var vertical = $(".education-vertical");
+            var vertical_height = $("#education-tb").css("height");
+            vertical.css("height", vertical_height);
+        })
+        var app = angular.module("myCertificates",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.certificates =["Resume", "Coding Ninjas Front End Web Development", "Coding Ninjas Back End Web Development"];
+            $scope.sources=["assets/Resume.pdf#toolbar=0", "assets/Front-endCN.pdf#toolbar=0", "assets/Back-endCN.pdf#toolbar=0"];
+            $scope.last=$scope.certificates[0];
+            $scope.updateSource=(x)=>{
+                console.log(x);
+                if($scope.last==x){
+                    return;
+                }
+                for( var i=0; i<$scope.certificates.length;i++){
+                    if(x==$scope.certificates[i]){
+                        $scope.last=$scope.certificates[i];
+                        $('#Docx').attr('src',$scope.sources[i]);
+                        break;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

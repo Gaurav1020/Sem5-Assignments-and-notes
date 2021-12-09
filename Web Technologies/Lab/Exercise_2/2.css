@@ -1,0 +1,26 @@
+.digiclock{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+.img-slider{
+    width:50%;
+    height:200px;
+    background-color:red;
+}
+#ximg{
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex-s{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+}
+.clrpicker{
+    width:50%;
+    height:200px;
+    padding-left:20px;
+}

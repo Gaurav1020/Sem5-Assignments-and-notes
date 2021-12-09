@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style media="screen">
+        body {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        td {
+            padding: 10px 20px;
+        }
+
+        #submit-button {
+            padding: 5px;
+            background-color: lightblue;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employee Vehicle detail form</h1>
+    <form action="/confirm" method="post">
+        <table>
+            <tr>
+                <td>Employee Id:</td>
+                <td><input type="number" name="empid" value=""></td>
+            </tr>
+            <tr>
+                <td>Vehical No.:</td>
+                <td><input type="text" name="vehno" value=""></td>
+            </tr>
+            <tr>
+                <td>Owner:</td>
+                <td><input type="text" name="owner" value=""></td>
+            </tr>
+            <tr>
+                <td>Brand:</td>
+                <td><input type="text" name="brand" value=""></td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td><input type="number" name="year" value=""></td>
+            </tr>
+        </table>
+        <input type="submit" name="" value="submit" id="submit-bu&on">
+    </form>
+</body>
+
+</html>

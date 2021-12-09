@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            margin: 0 auto;
+        }
+        table tr td:nth-child(1){
+            text-align:right
+        }
+        table tr{
+            height:40px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/addbook" method=get style="width:fit-content">
+        <fieldset>
+            <legend><b>Add Book</b></legend>
+            <table>
+                <tr><td>Title:</td><td><input type=text name=ti required placeholder=BookName></td></tr>
+                <tr><td>Author:</td><td><input type=text name=au required placeholder=Author></td></tr>
+                <tr><td>ISBN no:</td><td><input type=number name=is required placeholder=1234567890></td></tr>
+                <tr><td>Publisher:</td><td><input type=text name=pu required placeholder=Publisher></td></tr>
+                <tr><td>Edition:</td><td><input type=text name=ed required placeholder=Edition></td></tr>
+                <tr><td>Price:</td><td><input  name=pr required ></td></tr>
+            </table>
+            <input type=submit>&nbsp;&nbsp;<input type=reset><br>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id=ssheet rel="stylesheet" href="calL.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td id=otp colspan=4><p id=output>0</p></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btns num" value=1 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=2 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=3 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns ope" value=+ onclick="Exprappend(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btns num" value=4 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=5 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=6 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns ope" value=- onclick="Exprappend(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btns num" value=7 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=8 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=9 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns ope" value=* onclick="Exprappend(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btns num" value=0 onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns num" value=. onclick="Exprappend(this.value)"></td>
+            <td><input type="button" class="btns ope" value="=" onclick="Ans()"></td>
+            <td><input type="button" class="btns ope" value=/ onclick="Exprappend(this.value)"></td>
+        </tr>
+        <tr>
+            <td  colspan=1><input type="button" class="btns ope" value="del" onclick="del()"></td>
+            <td  colspan=1><input type="button" class="btns ope" value="AC" onclick="AC()"></td>
+            <td  colspan=2><input type="button" class="btns switch" value="Dark Mode" onclick="dark()"></td>
+        </tr>
+    </table>
+    <script>
+        var expression="";
+        var output=document.getElementById('output');
+        function Exprappend(value){
+            expression+=value;
+            console.log(expression.toString(10));
+            output.innerHTML=expression.toString(10);
+        }
+        function Ans(){
+            try{
+            if(eval(expression)==undefined){
+                throw new Error('Undefined input');
+            }
+            expression=eval(expression.toString(10));
+            output.innerHTML=expression;
+            }catch(err){
+                output.innerHTML="Enter Valid Data";
+                expression="";
+                console.log(error)
+            }
+        }
+        function del(){
+            expression=expression.toString(10).slice(0,-1);
+            if(expression.toString(10).length==0){
+                expression="";
+                output.innerHTML="0"
+                return;
+            }
+            output.innerHTML=expression;
+        }
+        function dark(){
+            var sheet=document.getElementById('ssheet');
+            sheet.setAttribute("href","calD.css");
+            var switchero = document.querySelector('.switch');
+            switchero.setAttribute("value","Light Mode");
+            switchero.setAttribute("onclick","light()");
+        }
+        function light(){
+            var sheet=document.getElementById('ssheet');
+            sheet.setAttribute("href","calL.css");
+            var switchero = document.querySelector('.switch');
+            switchero.setAttribute("value","Dark Mode");
+            switchero.setAttribute("onclick","dark()");
+        }
+        function AC(){
+            expression="";
+            output.innerHTML="0";
+        }
+    </script>
+</body>
+</html>

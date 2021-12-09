@@ -1,0 +1,90 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./5.js"></script>
+    <style>
+        .right{
+            right:0;
+        }
+    </style>
+</head>
+<body>
+        <iframe src="5top.html" width=100%></iframe>
+        <div  style="margin-top:20px">
+            <table cellspacing="5px" style="border:2px solid black;width:60%" align="center">
+                <form style=" margin:0;padding: 0">
+                    <tr>
+                        <td>Source Station</td>
+                        <td>Destination Station</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="From" name=from></td>
+                        <td><input type="text" placeholder="To" name=to></td>
+                    </tr>
+                    <tr>
+                        <td>Train Name</td>
+                        <td>Coach Number</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name=trainname>
+                                <option value=RE>Rajdhani Express</option>
+                                <option value=SE>Shatabdi Express</option>
+                                <option value=GR>GareebRath</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name=coach>
+                                <option>S1</option>
+                                <option>S2</option>
+                                <option>S3</option>
+                                <option>A1</option>
+                                <option>A2</option>
+                                <option>A3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>Time</td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" name=date></td>
+                        <td><input type="text" name=time></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>Count</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name=gender>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" name=Pcount id="pcnt">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button id="btn">Submit</button>
+                        <td><input type="reset"></td>
+                    </tr>
+                </form>
+            </table>
+            <div>
+                <p style="color: green; display:none" id="success">*Tickets Booked</p>
+            </div>
+            <div>
+                <p style="color: red; display:none" id="fail">*Tickets not available</p>
+            </div>
+        </div>
+        
+        
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "Products": [
+        {
+            "ProductID": "1",
+            "name": "A",
+            "price": "10",
+            "stock": "10",
+            "type": "z"
+        },
+        {
+            "ProductID": "2",
+            "name": "B",
+            "price": "20",
+            "stock": "20",
+            "type": "y"
+        },
+        {
+            "ProductID": "3",
+            "name": "C",
+            "price": "30",
+            "stock": "30",
+            "type": "x"
+        }
+    ]
+}

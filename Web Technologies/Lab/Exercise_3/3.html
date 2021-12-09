@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div>
+        <form method=GET>
+            <label for="products">Choose a product:</label>
+            <select name="products" id="products">
+            </select>
+            <option></option>
+            <br><br>
+            <button type=button id=btn>Check</button>
+        </form>
+    </div>
+    <div>
+        <table id=table>
+            <thead>
+                <th>ProductID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Type</th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+    <script>
+        var X
+        var fun= async ()=>{
+            let dropdown = await $('#products');
+            console.log(dropdown.length)
+            dropdown.empty();
+            dropdown.append('<option selected="true" disabled>Choose product</option>');
+            dropdown.prop('selectedIndex', 0);
+            await $.getJSON('3.json', function (data) {
+                console.log(data.Products)
+                X=data.Products
+            })
+            $.each(X, (key, entry)=>{
+                console.log(entry.name)
+                dropdown.append($('<option></option>').attr('value', entry.ProductID).text(entry.name));
+            });
+        }
+        fun()
+        
+        $('#btn').click(()=>{
+            $('#table tbody').empty();
+            var val=$("form").serializeArray();
+            console.log(val[0].value)
+            var pid=val[0].value;
+            for (var i=0; i<X.length; i++){
+                if(pid==X[i].ProductID){
+                    $('tbody').append('<tr><td>'+X[i].ProductID+'</td><td>'+X[i].name+'</td><td>'+X[i].price+'</td>'+'<td>'+X[i].stock+'</td>'+'<td>'+X[i].type+'</td>'+'</tr>')
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

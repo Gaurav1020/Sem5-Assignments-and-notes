@@ -1,0 +1,16 @@
+table{
+    margin:50px auto 0px;
+    border-style: solid dotted;
+    border-width: 5px 3px;
+    border-color: cyan blue;
+    width:300px;
+    height:300px
+}
+table tr{
+    width:100px;
+}
+tr td{
+    text-align: center;
+    color:white;
+    background-color: rgb(102, 102, 102)
+}

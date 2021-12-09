@@ -1,0 +1,60 @@
+.A{
+    width:100%;
+    height:200px;
+    background-color: rgb(253, 188, 68);
+    margin-top:10px;
+    position:relative;
+}
+
+#A2{
+    height:500px;
+}
+
+
+.A .B{
+    position:absolute;
+    background-color:cyan;
+    border:2px solid black;
+    margin-top: 10px;
+    margin-left:10%;
+}
+
+.B,.D p{
+    color:rgb(29, 29, 29);
+    font-weight:bold;
+    padding-left:10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.B,.D{
+    width:80%;
+    height:120px;
+    background-color:grey;
+    margin-left:auto;
+    margin-right:auto;
+}
+.A .foot{
+    font-weight:bold;
+    font-size:20px;
+}
+
+.C{
+    position:absolute;
+    width:80%;
+    height:80%;
+    background-image:url("PS.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left:10%;
+    margin-top: 30px;;
+}
+.B .cp{
+    font-size: 15px;
+    font-style: oblique;
+    color:brown;
+}
+.foot{
+    margin-left: 0px;
+    width:100%;
+    text-align: center;
+}

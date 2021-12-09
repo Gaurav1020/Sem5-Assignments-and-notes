@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body>
+    <!-- <div>
+        <a href="/database">Database</a>
+    </div> -->
+    <div>
+        <form method="post" autocomplete="off" action="{{ url_for("encrypt_send")}}">
+            <label for=name>Full Name</label><br>
+            <input type=text name="name" id=name placeholder="Full Name" required autocomplete="off"><br>
+            <label for=rno>Registration Number</label><br>
+            <input type=text name="rno" id=rno placeholder="19XXX1234" required autocomplete="off"><br>
+            <label for=pwd>Password</label><br>
+            <input type=password name="pwd" id=pwd required autocomplete="off"><br>
+            <label for=date>DOB</label><br>
+            <input type="date" name="date" id=date required autocomplete="off"><br>
+            <label for=addr>Address</label><br>
+            <textarea id="addr" name="addr" rows="4" cols="50" placeholder="Enter Address here" required autocomplete="off"></textarea><br>
+            <label for="phone">Phone Number</label><br>
+            <input type="text" name="phone" id="phone" placeholder="+91XXXXXXXXXX" required autocomplete="off"><br><br>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>
